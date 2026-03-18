@@ -40,6 +40,7 @@ extensions = [
     'myst_parser',
     'nbsphinx',
     'sphinxext.opengraph',
+    'sphinx-sitemap'
 ]
 
 templates_path = ['_templates']
