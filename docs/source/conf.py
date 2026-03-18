@@ -35,12 +35,11 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
-    'sphinx_sitemap',
+    'sphinx-sitemap',
     'sphinxcontrib.mermaid',
     'myst_parser',
     'nbsphinx',
     'sphinxext.opengraph',
-    'sphinx-sitemap'
 ]
 
 templates_path = ['_templates']
