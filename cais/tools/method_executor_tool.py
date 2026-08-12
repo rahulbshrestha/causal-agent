@@ -78,7 +78,7 @@ def method_executor_tool(inputs: MethodExecutorInput, original_query: Optional[s
         # Add method-specific required vars from the variables_dict
         if method == "instrumental_variable" and variables_dict.get("instrument_variable"):
             required_cols_for_method.append(variables_dict["instrument_variable"])
-        elif method == "regression_discontinuity" and variables_dict.get("running_variable"):
+        elif method == "regression_discontinuity_design" and variables_dict.get("running_variable"):
              required_cols_for_method.append(variables_dict["running_variable"])
         
         missing_df_cols = [col for col in required_cols_for_method if col not in df.columns]

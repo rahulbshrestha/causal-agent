@@ -12,22 +12,22 @@ def run_caia(desc, question, df):
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Run batch causal analysis.")
-    parser.add_argument("--csv_path", type=str, required=True, help="CSV file with queries, descriptions, and file names.")
-    parser.add_argument("--data_folder", type=str, required=True, help="Folder containing data CSVs.")
-    parser.add_argument("--data_category", type=str, required=True, help="Dataset category (e.g., real, qrdata, synthetic).")
-    parser.add_argument("--output_folder", type=str, required=True, help="Folder to save output.")
+    parser.add_argument("--metadata_path", type=str, required=True, help="CSV file with queries, descriptions, and file names.")
+    parser.add_argument("--data_dir", type=str, required=True, help="Folder containing data CSVs.")
+    parser.add_argument("--output_dir", type=str, required=True, help="Folder to save output.")
+    parser.add_argument("--output_name", type=str, required=True, help="Name of the output JSON file.")
     parser.add_argument("--llm_name", type=str, required=True, help="Name of the LLM used.")
-    parser.add_argument("--llm_provider", type=str, required=True, help="Name of the LLM used.")
+    parser.add_argument("--llm_provider", type=str, required=True, help="Name of the LLM provider used.")
     return parser.parse_args()
 
 def main():
-    
+
     args = parse_args()
-    csv_meta = args.csv_meta
+    csv_meta = args.metadata_path
     data_dir = args.data_dir
-    output_json = args.output_json
+    output_json = os.path.join(args.output_dir, args.output_name)
     os.environ["LLM_MODEL"] = args.llm_name
-    os.environ["LLM_PROVIDER"] = args.llm_name
+    os.environ["LLM_PROVIDER"] = args.llm_provider
     print("[main] Starting batch processing…")
 
     if not os.path.exists(csv_meta):
