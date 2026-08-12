@@ -116,7 +116,7 @@ def get_method_explanation(method: str) -> str:
             "receives a treatment and a group that does not. It controls for time-invariant unobserved "
             "confounders by looking at differences in trends rather than absolute values."
         ),
-        "regression_discontinuity": (
+        "regression_discontinuity_design": (
             "Regression Discontinuity Design exploits a threshold or cutoff rule that determines treatment "
             "assignment. By comparing observations just above and below this threshold, where treatment "
             "status changes but other characteristics remain similar, it estimates the local causal effect."
@@ -272,7 +272,7 @@ def explain_application(method: str, treatment: str, outcome: str,
             f"receive the treatment. This approach controls for time-invariant confounders and "
             f"common time trends that affect both groups."
         ),
-        "regression_discontinuity": (
+        "regression_discontinuity_design": (
             f"I will focus on observations close to the cutoff value "
             f"({variables.get('cutoff_value')}) of the running variable "
             f"({variables.get('running_variable')}), where treatment assignment changes. "
@@ -325,7 +325,7 @@ def explain_limitations(method: str, concerns: List[str]) -> str:
             "tested for the post-treatment period. It may be sensitive to the choice of comparison group "
             "and can be biased if there are time-varying confounders or anticipation effects."
         ),
-        "regression_discontinuity": (
+        "regression_discontinuity_design": (
             "Regression Discontinuity provides estimates that are local to the cutoff point and may not "
             "generalize to units far from this threshold. It also requires sufficient data around the "
             "cutoff and is sensitive to the choice of bandwidth and functional form."
@@ -385,7 +385,7 @@ def generate_interpretation_guide(method: str, treatment: str, outcome: str) -> 
             f"trends in the absence of treatment. It accounts for both time-invariant differences "
             f"between groups and common time trends."
         ),
-        "regression_discontinuity": (
+        "regression_discontinuity_design": (
             f"The estimated effect represents the local causal impact of {treatment} on {outcome} "
             f"at the cutoff point. It can be interpreted as the expected difference in outcomes "
             f"for units just above versus just below the threshold, where treatment status changes."

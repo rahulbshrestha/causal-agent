@@ -108,7 +108,8 @@ def _format_method_name(method: str) -> str:
         "difference_in_differences": "Difference-in-Differences",
         "regression_discontinuity": "Regression Discontinuity Design",
         "backdoor_adjustment": "Backdoor Adjustment",
-        "propensity_score_weighting": "Propensity Score Weighting"
+        "propensity_score_weighting": "Propensity Score Weighting",
+        "regression_discontinuity_design": "Regression Discontinuity Design"
     }
     return method_names.get(method, method.replace("_", " ").title())
 

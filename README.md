@@ -123,7 +123,7 @@ cp .env.example .env
 # Create a new conda environment with Python 3.10
 conda create -n cais python=3.10
 conda activate cais
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 **Step3: Setup cais library**
@@ -144,12 +144,12 @@ All datasets used to evaluate CAIs and the baseline models are available in the 
 ## Run 
 To execute CAIS, run
 ```python
-python main/run_cais.py \
+python run_cais.py \
     --metadata_path {path_to_metadata} \
     --data_dir {path_to_data_folder} \
     --output_dir {output_folder} \
     --output_name {output_filename} \
-    --llm_name {llm_name}
+    --llm_name {llm_name} \
     --llm_provider {llm_provider}
 ```
 Args:
